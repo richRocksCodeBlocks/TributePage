@@ -1,0 +1,148 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: hsl(194, 69%, 78%);
+    font-size: 16px;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header" "content" "footer";
+
+}
+
+.header {
+    grid-area: header;
+    padding: 20px;
+}
+
+.header h1 {
+    color: white;
+    margin: -15px auto 5px auto;
+    text-align: center;
+    font-family: 'Chewy', cursive;
+    text-shadow: 2px 2px #2b2b2b;
+    font-size: 5vw;
+}
+
+.header p {
+    color: white;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    text-shadow: 1px 1px #2b2b2b;
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "text" "image";
+    background-color: white;
+    border: .5em solid #d44732;
+    margin: 2em 2em auto 2em;
+    transform: perspective(180px) rotateX(-0.7deg);
+
+}
+
+.footer {
+    grid-area: footer;
+    background-color: dodgerblue;
+    color: whitesmoke;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 3vw;
+    align-content: center;
+    font-family: 'Raleway', sans-serif;
+    line-height: 60px;
+}
+
+.tribute-info {
+    grid-area: text;
+    min-height: 0;
+    margin-top: 10px;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+}
+.tribute-info p {
+    text-align: justify;
+}
+.tribute-info h1 {
+    text-align: left;
+}
+
+.image-div {
+    grid-area: image;
+    width: 100%;
+
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-caption {
+    font-family: 'Raleway', sans-serif;
+    font-size: small;
+}
+
+/* Medium Screen */
+@media (min-width: 43.813em) {
+    .wrapper {
+        min-height: 100%;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+                "header header  header  header  header"
+                ".      content content content ."
+                "footer footer  footer  footer  footer";
+    }
+
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 2fr minmax(3em, 2fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: "text image";
+        min-height: 0;
+
+    }
+
+    .tribute-info {
+        grid-area: text;
+        min-height: 0;
+        margin-top: 10px;
+        padding: 10px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1em;
+    }
+
+    .footer {
+        grid-area: footer;
+        background-color: dodgerblue;
+        color: whitesmoke;
+        align-items: center;
+    }
+
+    .footer p {
+        text-align: center;
+        font-size: 1em;
+        font-family: 'Raleway', sans-serif;
+    }
+}
